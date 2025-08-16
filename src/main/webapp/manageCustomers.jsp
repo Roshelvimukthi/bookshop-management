@@ -35,10 +35,6 @@
       <label for="phone" class="form-label">Phone</label>
       <input type="text" class="form-control" id="phone" name="phone" required>
     </div>
-    <div class="mb-3">
-      <label for="unitsConsumed" class="form-label">Units Consumed</label>
-      <input type="number" class="form-control" id="unitsConsumed" name="unitsConsumed" required>
-    </div>
     <button type="submit" class="btn btn-primary">Add Customer</button>
   </form>
 
@@ -50,7 +46,6 @@
       <th>Name</th>
       <th>Address</th>
       <th>Phone</th>
-      <th>Units Consumed</th>
       <th>Action</th>
     </tr>
     </thead>
@@ -65,7 +60,6 @@
       <td><%= customer.getName() %></td>
       <td><%= customer.getAddress() %></td>
       <td><%= customer.getPhone() %></td>
-      <td><%= customer.getUnitsConsumed() %></td>
       <td>
         <form action="customer" method="post" style="display:inline;">
           <input type="hidden" name="action" value="update">
@@ -73,8 +67,12 @@
           <input type="text" name="name" value="<%= customer.getName() %>" required>
           <input type="text" name="address" value="<%= customer.getAddress() %>" required>
           <input type="text" name="phone" value="<%= customer.getPhone() %>" required>
-          <input type="number" name="unitsConsumed" value="<%= customer.getUnitsConsumed() %>" required>
           <button type="submit" class="btn btn-sm btn-warning">Update</button>
+        </form>
+        <form action="customer" method="post" style="display:inline;">
+          <input type="hidden" name="action" value="delete">
+          <input type="hidden" name="accountNumber" value="<%= customer.getAccountNumber() %>">
+          <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this customer?')">Delete</button>
         </form>
       </td>
     </tr>
