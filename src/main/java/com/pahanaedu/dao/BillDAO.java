@@ -22,13 +22,13 @@ public class BillDAO {
             if (rowsAffected > 0) {
                 try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        return generatedKeys.getInt(1); // Return the auto-incremented bill_id
+                        return generatedKeys.getInt(1);
                     }
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return -1; // Indicate failure
+        return -1;
     }
 }
