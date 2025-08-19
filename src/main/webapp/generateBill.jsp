@@ -287,6 +287,7 @@
                     <p><strong>Account Number:</strong> <span id="customerAccount"></span></p>
                     <p><strong>Date & Time:</strong> <span id="billDateTime"></span></p>
                     <p><strong>Pahana Edu Tel</strong> : 0779812245/0776317245</p>
+                    <p><strong>Thank you! and come a gain.....</strong></p>
                     <ul id="billItems"></ul>
                     <hr>
                     <p><strong>Total: <span id="totalAmount">Rs.0.00</span></strong></p>
