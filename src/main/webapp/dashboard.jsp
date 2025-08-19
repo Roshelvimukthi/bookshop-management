@@ -3,12 +3,12 @@
 <html>
 <head>
   <title>Pahana Edu - Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/Style.css">
 </head>
 <body>
 <% if (session.getAttribute("username") == null) { response.sendRedirect("login.jsp"); return; } %>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+<nav class="navbar">
+  <div class="dashboard_container-fluid">
     <a class="navbar-brand" href="#">Pahana Edu Bookshop</a>
     <div class="navbar-nav">
       <a class="nav-link" href="manageCustomers.jsp">Manage Customers</a>
@@ -19,7 +19,7 @@
     </div>
   </div>
 </nav>
-<div class="container mt-5">
+<div class="dashboard_container">
   <h2>Welcome, <%= session.getAttribute("username") %>!</h2>
   <p>Select an option from the navigation bar to manage customers, items, or generate bills.</p>
 </div>

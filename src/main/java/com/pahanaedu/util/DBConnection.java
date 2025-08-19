@@ -18,7 +18,7 @@ public class DBConnection {
             return conn;
         } catch (SQLException e) {
             System.err.println("Database connection failed: " + e.getMessage());
-            throw e; // Re-throw to be caught in the servlet
+            throw e;
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
