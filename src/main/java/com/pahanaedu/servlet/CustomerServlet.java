@@ -19,7 +19,7 @@ import java.sql.SQLException;
 public class CustomerServlet extends HttpServlet {
     private CustomerDAO customerDAO = new CustomerDAO();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("username") == null) {
             response.sendRedirect("login.jsp");
@@ -42,7 +42,7 @@ public class CustomerServlet extends HttpServlet {
                 if (customerDAO.addCustomer(customer)) {
                     request.setAttribute("message", "Customer added successfully");
                 } else {
-                    request.setAttribute("error", "Failed to add customer");
+                    request.setAttribute("error", "Failed to add customer already exist ");
                 }
             } else if ("update".equals(action)) {
                 Customer customer = new Customer(

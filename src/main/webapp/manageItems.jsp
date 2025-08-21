@@ -61,7 +61,7 @@
                 <form action="item" method="post" style="display:inline;">
                     <input type="hidden" name="action" value="delete">
                     <input type="hidden" name="itemId" value="<%= item.getItemId() %>">
-                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure delete the item?')">Delete</button>
                 </form>
             </td>
         </tr>

@@ -196,13 +196,13 @@
                         alert("Error: " + response.error);
                     }
                     window.print();
-                    // Clear form after print
+
                     clearForm();
                 },
                 error: function() {
                     alert("Failed to save bill");
                     window.print();
-                    // Clear form even if save fails, to reset for next use
+
                     clearForm();
                 }
             });
@@ -219,11 +219,9 @@
             document.getElementById("totalAmountHidden").value = "0.00";
             document.getElementById("billItems").innerHTML = "";
 
-            // Clear item table
             var table = document.getElementById("itemsTable").getElementsByTagName("tbody")[0];
             table.innerHTML = "";
 
-            // Add a single empty row
             addItemRow();
         }
 
