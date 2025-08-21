@@ -27,7 +27,7 @@ public class ItemServlet extends HttpServlet {
         try {
             if ("add".equals(action)) {
                 Item item = new Item(
-                        0, // Auto-incremented by DB
+                        0,
                         request.getParameter("name"),
                         Double.parseDouble(request.getParameter("price"))
                 );
